@@ -1,0 +1,32 @@
+server:
+  port: 19004
+
+spring:
+  application:
+    name: BLOG-SERVICE # DB lb://{URI} 에서 URI는 spring.application.name과 매칭된다.
+  r2dbc:
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: r2dbc:mysql://192.168.75.87:3333/blog?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&sslMode=DISABLED
+    username: blog
+    password: blog!@#123
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG
+
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      format_sql: true
+#      ddl-auto: none
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone : http://aibees1129:qkr12wns3!@localhost:19001/eureka/
+  instance:
+    prefer-ip-address: true
