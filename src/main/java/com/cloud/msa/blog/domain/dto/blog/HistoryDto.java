@@ -11,5 +11,6 @@ public class HistoryDto {
     private String title;
     private String uri;
     private String referrer;
+    private String userAgent;
     private String createTime;
 }

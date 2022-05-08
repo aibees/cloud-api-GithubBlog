@@ -18,10 +18,10 @@ public class BlogHistory {
     @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column()
     private String title;
     private String uri;
     private String referrer;
+    private String userAgent;
     private LocalDateTime createTime;
 
     public static BlogHistory deepCopy(BlogHistory history) {
@@ -29,6 +29,7 @@ public class BlogHistory {
                 .title(history.getTitle())
                 .uri(history.getUri())
                 .referrer(history.getReferrer())
+                .userAgent(history.getUserAgent())
                 .createTime(history.getCreateTime())
                 .build();
     }

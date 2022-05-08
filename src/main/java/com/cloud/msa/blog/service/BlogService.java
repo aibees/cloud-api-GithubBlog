@@ -44,7 +44,7 @@ public class BlogService {
     }
 
     public ResponseEntity<Response> saveHistoryService(HistoryDto dto) {
-        System.out.println(dto);
+//        System.out.println(dto);
 
         LocalDateTime now = LocalDateTime.now();
 
@@ -52,10 +52,11 @@ public class BlogService {
                 .title(dto.getTitle())
                 .uri(dto.getUri())
                 .referrer(dto.getReferrer())
+                .userAgent(dto.getUserAgent())
                 .createTime(now)
                 .build();
 
-        System.out.println(history.toString());
+//        System.out.println(history.toString());
         Object result = blogRepository.save(history).subscribe();
 
         return new ResponseEntity<>(
