@@ -15,6 +15,7 @@ public class WebConfiguration implements WebFluxConfigurer {
         registry.addMapping("/blog/**")
                 .allowedMethods(HttpMethod.POST.name())
                 .allowedMethods(HttpMethod.GET.name())
+                .allowedMethods(HttpMethod.OPTIONS.name())
                 .allowedOrigins("*");
     }
 }
