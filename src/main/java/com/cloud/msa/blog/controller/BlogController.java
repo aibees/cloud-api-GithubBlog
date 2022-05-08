@@ -22,12 +22,12 @@ public class BlogController {
         return blogService.saveHistoryService(dto);
     }
 
-    @GetMapping(path="/history", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/list/history", produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<BlogHistory> showAllBlogHistory(HistoryDto dto) {
         return blogService.showAllHistoryService(dto);
     }
 
-    @GetMapping("/history/:title")
+    @GetMapping("/list/history/:title")
     public ResponseEntity<Response> showBlogHistory(HistoryDto dto) {
         return blogService.showHistoryByTitleService(dto);
     }
