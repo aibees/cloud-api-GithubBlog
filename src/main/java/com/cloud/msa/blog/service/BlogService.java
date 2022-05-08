@@ -61,7 +61,6 @@ public class BlogService {
         Object result = blogRepository.save(history).subscribe();
 
         return ResponseEntity.ok()
-                .header("Access-Control-Allow-Origin", "https://aibees.github.io")
                 .body(Response.builder().data(result).status(HttpStatus.CREATED).build());
     }
 }
