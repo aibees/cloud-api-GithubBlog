@@ -16,6 +16,8 @@ public class WebConfiguration implements WebFluxConfigurer {
                 .allowedMethods(HttpMethod.POST.name())
                 .allowedMethods(HttpMethod.GET.name())
                 .allowedMethods(HttpMethod.OPTIONS.name())
-                .allowedOrigins("*");
+                .allowedHeaders("content-type")
+                .allowedOrigins("*")
+                .maxAge(3600L);
     }
 }
