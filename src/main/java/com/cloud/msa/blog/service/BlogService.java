@@ -21,7 +21,7 @@ public class BlogService {
 
     private final BlogHistoryRepository blogRepository;
 
-    public Flux<BlogHistory> showAllHistoryService(HistoryDto dto) {
+    public ResponseEntity<Flux<BlogHistory>> showAllHistoryService(HistoryDto dto) {
         List<BlogHistory> historyList = new ArrayList<>();
         Flux<BlogHistory> result = blogRepository.findAll();
         result.subscribe( data -> {
@@ -29,7 +29,8 @@ public class BlogService {
             historyList.add(data);
         });
         System.out.println("list size () : " + historyList.size());
-        return result;
+        return ResponseEntity.ok()
+                .body(result);
     }
 
     public ResponseEntity<Response> showHistoryByTitleService(HistoryDto dto) {
