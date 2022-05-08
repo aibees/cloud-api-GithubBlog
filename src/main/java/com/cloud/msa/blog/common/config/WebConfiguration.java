@@ -12,9 +12,9 @@ public class WebConfiguration implements WebFluxConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/blog/history")
+        registry.addMapping("/blog/**")
                 .allowedMethods(HttpMethod.POST.name())
-                .allowedOrigins("http://localhost:4000")
-                .allowedOrigins("https://aibees.github.io");
+                .allowedMethods(HttpMethod.GET.name())
+                .allowedOrigins("*");
     }
 }
