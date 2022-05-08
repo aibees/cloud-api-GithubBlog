@@ -17,6 +17,7 @@ public class BlogController {
 
     private final BlogService blogService;
 
+//    @CrossOrigin(origins = "")
     @PostMapping("/history")
     public ResponseEntity<Response> saveBlogHistory(@RequestBody HistoryDto dto) {
         return blogService.saveHistoryService(dto);
